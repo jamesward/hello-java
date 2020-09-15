@@ -1,17 +1,12 @@
 Sample Java Maven
 -----------------
 
-Run Locally (with Java 11 installed):
+Run Locally with Docker:
 ```
-./mvnw compile exec:java
-```
-
-Run Locally with Buildpacks & Docker:
-```
-pack build --builder=gcr.io/buildpacks/builder sample-java-mvn
-docker run -it -ePORT=8080 -p8080:8080 sample-java-mvn
+docker build -t hello-java .
+docker run -it -ePORT=8080 -p8080:8080 hello-java
 ```
 
 Run on Cloud Run:
 
-[![Run on Google Cloud](https://deploy.cloud.run/button.svg)](https://deploy.cloud.run/?cloudshell_context=cloudrun-gbp)
+[![Run on Google Cloud](https://deploy.cloud.run/button.svg)](https://deploy.cloud.run/?git_repo=https://github.com/jamesward/hello-java.git&revision=jdk15)
