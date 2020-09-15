@@ -6,4 +6,4 @@ COPY . /app
 
 RUN javac src/main/java/com/google/WebApp.java
 
-CMD java -cp src/main/java com.google.WebApp
+ENTRYPOINT ["java", "-cp", "src/main/java", "com.google.WebApp"]
